@@ -1,5 +1,15 @@
 # CI/CD Pipeline with Jenkins, Docker, Terraform, and Kubernetes
 
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Technologies Used](#technologies-used)
+3. [Setup and Installation](#setup-and-installation)
+4. [Usage](#usage)
+5. [CI/CD Pipeline Workflow](#cicd-pipeline-workflow)
+6. [License](#license)
+7. [Contributing](#contributing)
+
+
 This project demonstrates the creation of a **CI/CD pipeline** to automate the deployment of a simple **Node.js** application. We are using the following technologies:
 
 - **Jenkins** for automating the pipeline.
