@@ -4,10 +4,8 @@
 1. [Project Overview](#project-overview)
 2. [Technologies Used](#technologies-used)
 3. [Setup and Installation](#setup-and-installation)
-4. [Usage](#usage)
 5. [CI/CD Pipeline Workflow](#cicd-pipeline-workflow)
-6. [License](#license)
-7. [Contributing](#contributing)
+5. [License](#license)
 
 ---
 
@@ -58,19 +56,6 @@ kubectl apply -f kubernetes/deployment.yaml
 
 Follow the steps below to set up the project locally or on a cloud environment.
 
-#Usage
-Once the setup is complete, you can use the application as follows:
-
-Start the Application: If running locally via Docker:
-docker run -p 3000:3000 node-app
-Access the Application:
-Open your browser and go to http://localhost:3000 to access the Node.js app.
-Test the CI/CD Pipeline:
-Push changes to the GitHub repository to automatically trigger the Jenkins pipeline.
-Jenkins will run the pipeline, which includes:
-Building the Docker image.
-Pushing the image to AWS ECR.
-Deploying the application on Kubernetes.
 
 ### Prerequisites
 1. **Node.js** - Install from [nodejs.org](https://nodejs.org/)
