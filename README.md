@@ -9,43 +9,81 @@
 6. [License](#license)
 7. [Contributing](#contributing)
 
+---
 
-This project demonstrates the creation of a **CI/CD pipeline** to automate the deployment of a simple **Node.js** application. We are using the following technologies:
+## Project Overview
 
-- **Jenkins** for automating the pipeline.
-- **Docker** for containerizing the Node.js application.
-- **Terraform** for provisioning AWS infrastructure (ECR for Docker image storage and EC2 instances).
-- **Kubernetes** for deploying the application in a scalable manner.
+This project demonstrates the implementation of a **CI/CD pipeline** using **Jenkins**, **Docker**, **Terraform**, and **Kubernetes**. The main goal is to automate the process of building, testing, and deploying a simple **Node.js** application in a cloud-native environment.
 
-### Project Overview
-
-1. **Node.js Application**: A simple **Node.js** app is created that serves a "Hello, World!" message via an Express server.
-2. **Dockerization**: The Node.js app is containerized using Docker to make it portable and easy to deploy.
-3. **Terraform**: Infrastructure is provisioned on AWS using **Terraform**, including an **ECR** repository to store the Docker image and **EC2** instances for hosting.
-4. **Jenkins CI/CD Pipeline**: The process is automated using **Jenkins**, which handles building, testing, and deploying the application.
+### Key Features:
+- **Automated Docker image builds** using Jenkins and Docker.
+- **Infrastructure provisioning** using Terraform to deploy resources on AWS (EC2, ECR, etc.).
+- **Containerization** with Docker for a consistent build and deployment environment.
+- **Deployment automation** to a **Kubernetes** cluster with rolling updates and scaling.
+- Continuous integration with automated tests on every code commit.
 
 ---
 
-## Prerequisites
+## Technologies Used
 
-Before you begin, make sure you have the following installed:
+This project utilizes the following tools and technologies:
 
-1. **Node.js**: [Install Node.js](https://nodejs.org/)
-2. **Docker**: [Install Docker](https://www.docker.com/get-started)
-3. **Terraform**: [Install Terraform](https://www.terraform.io/downloads.html)
-4. **Jenkins**: [Install Jenkins](https://www.jenkins.io/doc/book/installing/)
-5. **Kubernetes Cluster**: A running Kubernetes cluster (either local or cloud-based).
-6. **AWS CLI**: [Install AWS CLI](https://aws.amazon.com/cli/)
-7. **kubectl**: [Install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+- **Node.js**: JavaScript runtime for building the backend application.
+- **Docker**: For containerizing the Node.js application into an isolated environment.
+- **Jenkins**: Automates the build, test, and deployment pipeline.
+- **Terraform**: Infrastructure-as-Code tool used to provision AWS resources like EC2 and ECR.
+- **Kubernetes**: Container orchestration platform for scaling, load balancing, and managing deployments.
+- **AWS**: Cloud service provider used for infrastructure (ECR for Docker images, EC2 for compute, etc.).
+- **GitHub**: Version control for source code and integration with Jenkins.
 
 ---
 
-## Project Setup
+## Setup and Installation
 
-### 1. Clone the Repository
+#Docker Setup:-
+- Build Docker Image:
+docker build -t node-app 
+- Run Docker Container:
+docker run -p 3000:3000 node-app
 
-Clone the project repository to your local machine:
+#Terraform Setup
+- Initialize Terraform:
+terraform init
+- Apply Terraform Configuration (This will provision infrastructure on AWS):
+terraform apply
 
+#Kubernetes Setup
+- Deploy to Kubernetes:
+kubectl apply -f kubernetes/deployment.yaml
+
+Follow the steps below to set up the project locally or on a cloud environment.
+
+#Usage
+Once the setup is complete, you can use the application as follows:
+
+Start the Application: If running locally via Docker:
+docker run -p 3000:3000 node-app
+Access the Application:
+Open your browser and go to http://localhost:3000 to access the Node.js app.
+Test the CI/CD Pipeline:
+Push changes to the GitHub repository to automatically trigger the Jenkins pipeline.
+Jenkins will run the pipeline, which includes:
+Building the Docker image.
+Pushing the image to AWS ECR.
+Deploying the application on Kubernetes.
+
+### Prerequisites
+1. **Node.js** - Install from [nodejs.org](https://nodejs.org/)
+2. **Docker** - Install from [docker.com](https://www.docker.com/get-started)
+3. **Terraform** - Install from [terraform.io](https://www.terraform.io/downloads.html)
+4. **Jenkins** - Install from [jenkins.io](https://www.jenkins.io/doc/book/installing/)
+5. **AWS CLI** - Install from [AWS CLI](https://aws.amazon.com/cli/)
+6. **kubectl** - Install from [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+
+### Clone the Repository
+Clone the repository to your local machine:
 ```bash
-git clone https://github.com/your-username/my-cicd-project.git
-cd my-cicd-project
+git clone https://github.com/your-username/ci-cd-pipeline.git
+cd ci-cd-pipeline
+
+
